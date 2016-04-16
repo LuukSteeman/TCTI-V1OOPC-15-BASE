@@ -1,5 +1,5 @@
 // example:
-// declaration of a rectangle object that is contains four line objects
+// declaration of a filled rectangle object
 
 #ifndef FILLED_RECTANGLE_HPP
 #define FILLED_RECTANGLE_HPP

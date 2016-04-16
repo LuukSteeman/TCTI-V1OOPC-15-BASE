@@ -1,5 +1,5 @@
 // example:
-// definition of the functions of a rectangle object
+// definition of the functions of a filled rectangle object
 
 #include "filled_rectangle.hpp"
 
