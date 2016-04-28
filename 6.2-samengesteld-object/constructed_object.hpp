@@ -12,11 +12,12 @@
 class constructed_object {
 private:
    window &win;
-   circle &cir;
-   line &lin;
-   filled_rectangle &rec;
+   circle cir1, cir2, cir3;
+   line lin1, lin2;
+   filled_rectangle rec;
+   int modular;
 public:
-   constructed_object( window & w, circle & cir, line & lin, filled_rectangle & rec);
+   constructed_object( window & w, int mod);
    void print();
 };
 
