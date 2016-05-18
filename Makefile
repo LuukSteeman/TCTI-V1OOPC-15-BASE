@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ 08-03-vector-public -  ]----------"
-	@cd "08-03-vector-public" && "$(MAKE)" -f  "08-03-vector-public.mk"
+	@echo "----------Building project:[ 13.2-catch -  ]----------"
+	@cd "13.2-catch" && "$(MAKE)" -f  "13.2-catch.mk"
 clean:
-	@echo "----------Cleaning project:[ 08-03-vector-public -  ]----------"
-	@cd "08-03-vector-public" && "$(MAKE)" -f  "08-03-vector-public.mk" clean
+	@echo "----------Cleaning project:[ 13.2-catch -  ]----------"
+	@cd "13.2-catch" && "$(MAKE)" -f  "13.2-catch.mk" clean
