@@ -1,0 +1,177 @@
+\hypertarget{classvector}{}\section{vector Class Reference}
+\label{classvector}\index{vector@{vector}}
+
+
+2D integer vector A\+DT  
+
+
+
+
+{\ttfamily \#include $<$vector.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classvector_a7fa147d3199381b9d8b32753bd1a6968}{vector} (int x, int y)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \hyperlink{classvector_a4ad9ccd38efea1ccba84e7666013532a}{operator+} (\hyperlink{classvector}{vector} \&rhs) const 
+\begin{DoxyCompactList}\small\item\em Add two vectors. \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \& \hyperlink{classvector_a9972b9662ea23331b1f8faab37e99c45}{operator+=} (\hyperlink{classvector}{vector} \&rhs)
+\begin{DoxyCompactList}\small\item\em Add vector to original. \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \& \hyperlink{classvector_a38d446ea9c634c06feeee946ebd61da8}{operator-\/} (\hyperlink{classvector}{vector} \&rhs) const 
+\begin{DoxyCompactList}\small\item\em Subtract two vectors. \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \& \hyperlink{classvector_a8817a31fd651ccab5601ec6c98839a56}{operator-\/=} (\hyperlink{classvector}{vector} \&rhs)
+\begin{DoxyCompactList}\small\item\em Subtract vector from original returning original. \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \& \hyperlink{classvector_a670fdc1cc083a1c6675bcb364915d338}{operator$\ast$} (int rhs) const 
+\begin{DoxyCompactList}\small\item\em Multiply vector with integer. \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \& \hyperlink{classvector_a810bc94e83cfd9eb092f7f39fcc77487}{operator$\ast$=} (int rhs)
+\begin{DoxyCompactList}\small\item\em Change original vector by multiplying with integer. \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \& \hyperlink{classvector_ab66f2a93a7fc9e8a1ab39eeb3a521597}{operator/} (int rhs) const 
+\begin{DoxyCompactList}\small\item\em Divide vector by integer. \end{DoxyCompactList}\item 
+\hyperlink{classvector}{vector} \& \hyperlink{classvector_a87765b60e94a08763ff2db6fe56125e9}{operator/=} (int rhs)
+\begin{DoxyCompactList}\small\item\em Divide and change vector by integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries x}\hypertarget{classvector_a0403eb3aea23a3009e276fba1d317046}{}\label{classvector_a0403eb3aea23a3009e276fba1d317046}
+
+\item 
+int {\bfseries y}\hypertarget{classvector_aad6de640298eae97ca0a094db5aff477}{}\label{classvector_aad6de640298eae97ca0a094db5aff477}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classvector_a7a6813f75dabd6f9575f9d6f91890255}{operator$<$$<$} (std\+::ostream \&lhs, const \hyperlink{classvector}{vector} \&rhs)
+\begin{DoxyCompactList}\small\item\em Write to std\+::ostream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+2D integer vector A\+DT 
+
+This is 2D vector A\+DT that stores its two components as (signed) integers. The x and y components are public attributes. The appropriate constructors and operators are provided. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{vector@{vector}!vector@{vector}}
+\index{vector@{vector}!vector@{vector}}
+\subsubsection[{\texorpdfstring{vector(int x, int y)}{vector(int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}vector\+::vector (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a7fa147d3199381b9d8b32753bd1a6968}{}\label{classvector_a7fa147d3199381b9d8b32753bd1a6968}
+
+
+default constructor 
+
+Constrcutor to initialize x and y coordinates 
+
+\subsection{Member Function Documentation}
+\index{vector@{vector}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator$\ast$(int rhs) const }{operator*(int rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{int}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a670fdc1cc083a1c6675bcb364915d338}{}\label{classvector_a670fdc1cc083a1c6675bcb364915d338}
+
+
+Multiply vector with integer. 
+
+This operator multiplies a vector with an integer. The resulting vector points in the same direction as the original, but with a different length. The x and y are the original x and y multiplied by the integer. \index{vector@{vector}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator$\ast$=(int rhs)}{operator*=(int rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{int}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a810bc94e83cfd9eb092f7f39fcc77487}{}\label{classvector_a810bc94e83cfd9eb092f7f39fcc77487}
+
+
+Change original vector by multiplying with integer. 
+
+This operator multiplies and changes the original vector with an integer. The vector keeps the same direction but its lenght changes. The new x and y are the old multiplied by the integer. \index{vector@{vector}!operator+@{operator+}}
+\index{operator+@{operator+}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator+(vector \&rhs) const }{operator+(vector &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vector\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf vector} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a4ad9ccd38efea1ccba84e7666013532a}{}\label{classvector_a4ad9ccd38efea1ccba84e7666013532a}
+
+
+Add two vectors. 
+
+This operator gives the sum of two vectors. The resulting vector points in the combined direction of the two original vectors. In other words, the x and y attributes of the result are the x and y are the sum of the x and y of the two original vectors. \index{vector@{vector}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator+=(vector \&rhs)}{operator+=(vector &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf vector} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a9972b9662ea23331b1f8faab37e99c45}{}\label{classvector_a9972b9662ea23331b1f8faab37e99c45}
+
+
+Add vector to original. 
+
+This operator adds the x and y values of a vector to an existing one. This doesn\textquotesingle{}t create a new vector, but changes the original. The x and y coordinates of the original vector become the sum of the two vectors. \index{vector@{vector}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator-\/(vector \&rhs) const }{operator-(vector &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf vector} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a38d446ea9c634c06feeee946ebd61da8}{}\label{classvector_a38d446ea9c634c06feeee946ebd61da8}
+
+
+Subtract two vectors. 
+
+This operator gives the result of the subtraction of two vectors The result is a vector where the x and y are the subtraction of the original x and y. \index{vector@{vector}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator-\/=(vector \&rhs)}{operator-=(vector &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf vector} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a8817a31fd651ccab5601ec6c98839a56}{}\label{classvector_a8817a31fd651ccab5601ec6c98839a56}
+
+
+Subtract vector from original returning original. 
+
+This operator returns the original vector after another vector has been subtracted from it. The x and y are the original x and y minus the subtracters x and y. \index{vector@{vector}!operator/@{operator/}}
+\index{operator/@{operator/}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator/(int rhs) const }{operator/(int rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator/ (
+\begin{DoxyParamCaption}
+\item[{int}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_ab66f2a93a7fc9e8a1ab39eeb3a521597}{}\label{classvector_ab66f2a93a7fc9e8a1ab39eeb3a521597}
+
+
+Divide vector by integer. 
+
+This operator divides a vector by an integer. The resulting vector points in the same direction but has a different length. The x and y are the original x and y divided by the integer. \index{vector@{vector}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator/=(int rhs)}{operator/=(int rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator/= (
+\begin{DoxyParamCaption}
+\item[{int}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a87765b60e94a08763ff2db6fe56125e9}{}\label{classvector_a87765b60e94a08763ff2db6fe56125e9}
+
+
+Divide and change vector by integer. 
+
+This operator changes a vector by dividing it with an integer. The vector doesn\textquotesingle{}t change direction but its length will change. The new x and y are the old divided by the integer. 
+
+\subsection{Friends And Related Function Documentation}
+\index{vector@{vector}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{lhs, }
+\item[{const {\bf vector} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classvector_a7a6813f75dabd6f9575f9d6f91890255}{}\label{classvector_a7a6813f75dabd6f9575f9d6f91890255}
+
+
+Write to std\+::ostream. 
+
+This operator writes the given vector to std\+::oustream. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{vector_8hpp}{vector.\+hpp}\end{DoxyCompactItemize}
