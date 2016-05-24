@@ -1,5 +1,8 @@
-Debug/main.cpp.o: main.cpp catch_with_main.hpp vector.hpp
+Debug/main.cpp.o: main.cpp ../Catch/include/catch_with_main.hpp \
+ ../Catch/include/catch.hpp vector.hpp
 
-catch_with_main.hpp:
+../Catch/include/catch_with_main.hpp:
+
+../Catch/include/catch.hpp:
 
 vector.hpp:

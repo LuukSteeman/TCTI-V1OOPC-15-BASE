@@ -18,7 +18,18 @@ public:
    x(x),
    y(y)
    {}
-
+	
+	
+	/// Compare two vectors
+	//
+	/// This operator compares two operators to see if they're equal.
+	/// Eqaulity means that the x and y coordinates of the respective vectors are equal.
+	
+	bool operator==( const vector & rhs) const 
+	{
+		return ( x == rhs.x) && ( y == rhs.y);
+	}
+	
    /// Add two vectors
    //
    /// This operator gives the sum of two vectors.
@@ -50,7 +61,7 @@ public:
    /// The result is a vector where the x and y are the subtraction of 
    /// the original x and y.
    
-   vector & operator-( vector & rhs) const 
+   vector operator-( vector & rhs) const 
    {
 		return vector( x - rhs.x, y - rhs.y);
 	};
@@ -75,7 +86,7 @@ public:
    /// the original, but with a different length.
    /// The x and y are the original x and y multiplied by the integer.
    
-   vector & operator*( int rhs) const 
+   vector operator*( int rhs) const 
    {
 		return vector(x * rhs, y * rhs);
 	};
@@ -90,7 +101,7 @@ public:
    {
 		x = x * rhs;
 		y = y * rhs;
-		return *this.
+		return *this;
 	};
    
    /// Divide vector by integer
@@ -100,7 +111,7 @@ public:
    /// but has a different length.
    /// The x and y are the original x and y divided by the integer.
    
-   vector & operator/( int rhs) const 
+   vector operator/( int rhs) const 
    {
 		return vector( x / rhs, y / rhs);
 	};

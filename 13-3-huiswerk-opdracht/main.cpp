@@ -53,7 +53,7 @@ TEST_CASE( "divide by integer" ){
 TEST_CASE( "change by dividing by integer" ){
    vector v( 6, 8 );
 	v /= 2;
-   REQUIRE( v == rational( 3, 4 ) );   
+   REQUIRE( v == vector( 3, 4 ) );   
 }
 
 TEST_CASE( "operator <<"){

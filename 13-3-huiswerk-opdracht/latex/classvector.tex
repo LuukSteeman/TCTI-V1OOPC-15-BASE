@@ -14,19 +14,21 @@
 \item 
 \hyperlink{classvector_a7fa147d3199381b9d8b32753bd1a6968}{vector} (int x, int y)
 \begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+bool \hyperlink{classvector_a3fafaffe7fdcc82cb9bd2cf53d933c1c}{operator==} (const \hyperlink{classvector}{vector} \&rhs) const 
+\begin{DoxyCompactList}\small\item\em Compare two vectors. \end{DoxyCompactList}\item 
 \hyperlink{classvector}{vector} \hyperlink{classvector_a4ad9ccd38efea1ccba84e7666013532a}{operator+} (\hyperlink{classvector}{vector} \&rhs) const 
 \begin{DoxyCompactList}\small\item\em Add two vectors. \end{DoxyCompactList}\item 
 \hyperlink{classvector}{vector} \& \hyperlink{classvector_a9972b9662ea23331b1f8faab37e99c45}{operator+=} (\hyperlink{classvector}{vector} \&rhs)
 \begin{DoxyCompactList}\small\item\em Add vector to original. \end{DoxyCompactList}\item 
-\hyperlink{classvector}{vector} \& \hyperlink{classvector_a38d446ea9c634c06feeee946ebd61da8}{operator-\/} (\hyperlink{classvector}{vector} \&rhs) const 
+\hyperlink{classvector}{vector} \hyperlink{classvector_a5c5351bb5fa3cfddb1cba6eb500ae782}{operator-\/} (\hyperlink{classvector}{vector} \&rhs) const 
 \begin{DoxyCompactList}\small\item\em Subtract two vectors. \end{DoxyCompactList}\item 
 \hyperlink{classvector}{vector} \& \hyperlink{classvector_a8817a31fd651ccab5601ec6c98839a56}{operator-\/=} (\hyperlink{classvector}{vector} \&rhs)
 \begin{DoxyCompactList}\small\item\em Subtract vector from original returning original. \end{DoxyCompactList}\item 
-\hyperlink{classvector}{vector} \& \hyperlink{classvector_a670fdc1cc083a1c6675bcb364915d338}{operator$\ast$} (int rhs) const 
+\hyperlink{classvector}{vector} \hyperlink{classvector_af5eb8137df41617181487e49d85df888}{operator$\ast$} (int rhs) const 
 \begin{DoxyCompactList}\small\item\em Multiply vector with integer. \end{DoxyCompactList}\item 
 \hyperlink{classvector}{vector} \& \hyperlink{classvector_a810bc94e83cfd9eb092f7f39fcc77487}{operator$\ast$=} (int rhs)
 \begin{DoxyCompactList}\small\item\em Change original vector by multiplying with integer. \end{DoxyCompactList}\item 
-\hyperlink{classvector}{vector} \& \hyperlink{classvector_ab66f2a93a7fc9e8a1ab39eeb3a521597}{operator/} (int rhs) const 
+\hyperlink{classvector}{vector} \hyperlink{classvector_a94f6a7eeb016bbb4b296eeafb507679c}{operator/} (int rhs) const 
 \begin{DoxyCompactList}\small\item\em Divide vector by integer. \end{DoxyCompactList}\item 
 \hyperlink{classvector}{vector} \& \hyperlink{classvector_a87765b60e94a08763ff2db6fe56125e9}{operator/=} (int rhs)
 \begin{DoxyCompactList}\small\item\em Divide and change vector by integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -69,11 +71,11 @@ Constrcutor to initialize x and y coordinates
 \subsection{Member Function Documentation}
 \index{vector@{vector}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!vector@{vector}}
-\subsubsection[{\texorpdfstring{operator$\ast$(int rhs) const }{operator*(int rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator$\ast$ (
+\subsubsection[{\texorpdfstring{operator$\ast$(int rhs) const }{operator*(int rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vector\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{int}]{rhs}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a670fdc1cc083a1c6675bcb364915d338}{}\label{classvector_a670fdc1cc083a1c6675bcb364915d338}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_af5eb8137df41617181487e49d85df888}{}\label{classvector_af5eb8137df41617181487e49d85df888}
 
 
 Multiply vector with integer. 
@@ -113,11 +115,11 @@ Add vector to original.
 
 This operator adds the x and y values of a vector to an existing one. This doesn\textquotesingle{}t create a new vector, but changes the original. The x and y coordinates of the original vector become the sum of the two vectors. \index{vector@{vector}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!vector@{vector}}
-\subsubsection[{\texorpdfstring{operator-\/(vector \&rhs) const }{operator-(vector &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator-\/ (
+\subsubsection[{\texorpdfstring{operator-\/(vector \&rhs) const }{operator-(vector &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vector\+::operator-\/ (
 \begin{DoxyParamCaption}
 \item[{{\bf vector} \&}]{rhs}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a38d446ea9c634c06feeee946ebd61da8}{}\label{classvector_a38d446ea9c634c06feeee946ebd61da8}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a5c5351bb5fa3cfddb1cba6eb500ae782}{}\label{classvector_a5c5351bb5fa3cfddb1cba6eb500ae782}
 
 
 Subtract two vectors. 
@@ -135,11 +137,11 @@ Subtract vector from original returning original.
 
 This operator returns the original vector after another vector has been subtracted from it. The x and y are the original x and y minus the subtracters x and y. \index{vector@{vector}!operator/@{operator/}}
 \index{operator/@{operator/}!vector@{vector}}
-\subsubsection[{\texorpdfstring{operator/(int rhs) const }{operator/(int rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector}\& vector\+::operator/ (
+\subsubsection[{\texorpdfstring{operator/(int rhs) const }{operator/(int rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vector\+::operator/ (
 \begin{DoxyParamCaption}
 \item[{int}]{rhs}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_ab66f2a93a7fc9e8a1ab39eeb3a521597}{}\label{classvector_ab66f2a93a7fc9e8a1ab39eeb3a521597}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a94f6a7eeb016bbb4b296eeafb507679c}{}\label{classvector_a94f6a7eeb016bbb4b296eeafb507679c}
 
 
 Divide vector by integer. 
@@ -155,7 +157,18 @@ This operator divides a vector by an integer. The resulting vector points in the
 
 Divide and change vector by integer. 
 
-This operator changes a vector by dividing it with an integer. The vector doesn\textquotesingle{}t change direction but its length will change. The new x and y are the old divided by the integer. 
+This operator changes a vector by dividing it with an integer. The vector doesn\textquotesingle{}t change direction but its length will change. The new x and y are the old divided by the integer. \index{vector@{vector}!operator==@{operator==}}
+\index{operator==@{operator==}!vector@{vector}}
+\subsubsection[{\texorpdfstring{operator==(const vector \&rhs) const }{operator==(const vector &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool vector\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf vector} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classvector_a3fafaffe7fdcc82cb9bd2cf53d933c1c}{}\label{classvector_a3fafaffe7fdcc82cb9bd2cf53d933c1c}
+
+
+Compare two vectors. 
+
+This operator compares two operators to see if they\textquotesingle{}re equal. Eqaulity means that the x and y coordinates of the respective vectors are equal. 
 
 \subsection{Friends And Related Function Documentation}
 \index{vector@{vector}!operator$<$$<$@{operator$<$$<$}}
