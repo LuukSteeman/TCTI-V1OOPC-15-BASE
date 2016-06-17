@@ -1,0 +1,88 @@
+\hypertarget{classsignal}{}\section{signal Class Reference}
+\label{classsignal}\index{signal@{signal}}
+
+
+Signal class for calculating frequency, intensity and average.  
+
+
+
+
+{\ttfamily \#include $<$signal\+\_\+pin.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsignal_aef2d7ed4ef10ccba493fc51e05149dfd}{signal} (int(\&arr)\mbox{[}A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE\mbox{]}, int total=0, int deviation=0, int crossover=0, int frequency=0, int average=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classsignal_a835580fc0e7fbb50caca191ba16a9f44}{find\+\_\+average} ()
+\begin{DoxyCompactList}\small\item\em Calculate the average value. \end{DoxyCompactList}\item 
+int \hyperlink{classsignal_acb1ba96b02c44654da3eeb0d652e2ffa}{find\+\_\+frequency} ()
+\begin{DoxyCompactList}\small\item\em Calculate the wave frequency. \end{DoxyCompactList}\item 
+int \hyperlink{classsignal_a69202b08571b076c0500c230316a0b10}{find\+\_\+intensity} ()
+\begin{DoxyCompactList}\small\item\em Calculate the wave intensity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Signal class for calculating frequency, intensity and average. 
+
+This is the class used to store the signal data received from the Aruino Due A\+DC and calculate the various elements of a wave. This class was made with soundwaves in mind and might therfore not work with other types of waves. All characteristics of this class are private and are only made visible by the class\textquotesingle{}s functions. All function definitions can be found in the signal\+\_\+pin.\+cpp file. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{signal@{signal}!signal@{signal}}
+\index{signal@{signal}!signal@{signal}}
+\subsubsection[{\texorpdfstring{signal(int(\&arr)[A\+R\+R\+A\+Y\+\_\+\+S\+I\+ZE], int total=0, int deviation=0, int crossover=0, int frequency=0, int average=0)}{signal(int(&arr)[ARRAY_SIZE], int total=0, int deviation=0, int crossover=0, int frequency=0, int average=0)}}]{\setlength{\rightskip}{0pt plus 5cm}signal\+::signal (
+\begin{DoxyParamCaption}
+\item[{int(\&)}]{arr\mbox{[}\+A\+R\+R\+A\+Y\+\_\+\+S\+I\+Z\+E\mbox{]}, }
+\item[{int}]{total = {\ttfamily 0}, }
+\item[{int}]{deviation = {\ttfamily 0}, }
+\item[{int}]{crossover = {\ttfamily 0}, }
+\item[{int}]{frequency = {\ttfamily 0}, }
+\item[{int}]{average = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classsignal_aef2d7ed4ef10ccba493fc51e05149dfd}{}\label{classsignal_aef2d7ed4ef10ccba493fc51e05149dfd}
+
+
+Constructor. 
+
+This constructor initializes the class using an existing array. All characteristics are set to default value 0 as to prevent bugs. 
+
+\subsection{Member Function Documentation}
+\index{signal@{signal}!find\+\_\+average@{find\+\_\+average}}
+\index{find\+\_\+average@{find\+\_\+average}!signal@{signal}}
+\subsubsection[{\texorpdfstring{find\+\_\+average()}{find_average()}}]{\setlength{\rightskip}{0pt plus 5cm}int signal\+::find\+\_\+average (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classsignal_a835580fc0e7fbb50caca191ba16a9f44}{}\label{classsignal_a835580fc0e7fbb50caca191ba16a9f44}
+
+
+Calculate the average value. 
+
+This function calculates the average value in the array of the class. It then returns the average so it can be used for other functions or to print it. \index{signal@{signal}!find\+\_\+frequency@{find\+\_\+frequency}}
+\index{find\+\_\+frequency@{find\+\_\+frequency}!signal@{signal}}
+\subsubsection[{\texorpdfstring{find\+\_\+frequency()}{find_frequency()}}]{\setlength{\rightskip}{0pt plus 5cm}int signal\+::find\+\_\+frequency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classsignal_acb1ba96b02c44654da3eeb0d652e2ffa}{}\label{classsignal_acb1ba96b02c44654da3eeb0d652e2ffa}
+
+
+Calculate the wave frequency. 
+
+This function calculates the frequency of the wave in Hz and returns it. It does so by first calling the fin\+\_\+average() function, and checking how often it passed the value found by the function. The resulting \char`\"{}crossover\char`\"{} value is then multiplied by a calibration factor. If you find the frequency to be off, use a known frequency and change the factor until the function returns the desired frequency. \index{signal@{signal}!find\+\_\+intensity@{find\+\_\+intensity}}
+\index{find\+\_\+intensity@{find\+\_\+intensity}!signal@{signal}}
+\subsubsection[{\texorpdfstring{find\+\_\+intensity()}{find_intensity()}}]{\setlength{\rightskip}{0pt plus 5cm}int signal\+::find\+\_\+intensity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classsignal_a69202b08571b076c0500c230316a0b10}{}\label{classsignal_a69202b08571b076c0500c230316a0b10}
+
+
+Calculate the wave intensity. 
+
+This function calculates the wave\textquotesingle{}s intensity. It does so by calculating the average deviation from the wave\textquotesingle{}s average, by comparing all the values to the return value of \hyperlink{classsignal_a835580fc0e7fbb50caca191ba16a9f44}{find\+\_\+average()}. The returned value is abstract and does not directly corrolate to DB. Higher returned values does however corrolate to a higher sound level. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{signal__pin_8hpp}{signal\+\_\+pin.\+hpp}\item 
+signal\+\_\+pin.\+cpp\end{DoxyCompactItemize}
