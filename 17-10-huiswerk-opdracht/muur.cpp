@@ -14,6 +14,7 @@ void muur::update(){
 
 muur::muur( window & w, const vector & start, const vector & end, bool filled, int update_interval, int update_count ):
 	rectangle( w, start, end),
+	start_help(start),
 	filled (filled),
 	update_interval(update_interval),
 	update_count(update_count)
@@ -22,9 +23,9 @@ muur::muur( window & w, const vector & start, const vector & end, bool filled, i
 void muur::draw(){
 	if ( (update_count % 2) == 0)
 	{
-		for (int i = start.x; i < end.x; i++)
+		for (int i = start_help.x; i < end.x; i++)
 		{
-			for (int j = start.y; j < end.y; j++) 
+			for (int j = start_help.y; j < end.y; j++) 
 			{
 				w.draw( vector(i, j));
 			}

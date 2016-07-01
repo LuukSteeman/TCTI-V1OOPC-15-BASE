@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Luuk
-Date                   :=31/05/2016
+Date                   :=01/07/2016
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :=C:/MinGW/bin/g++.exe
 SharedObjectLinkerName :=C:/MinGW/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := C:/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/ball.cpp$(ObjectSuffix) $(IntermediateDirectory)/circle.cpp$(ObjectSuffix) $(IntermediateDirectory)/drawable.cpp$(ObjectSuffix) $(IntermediateDirectory)/line.cpp$(ObjectSuffix) $(IntermediateDirectory)/rectangle.cpp$(ObjectSuffix) $(IntermediateDirectory)/vector.cpp$(ObjectSuffix) $(IntermediateDirectory)/window.cpp$(ObjectSuffix) $(IntermediateDirectory)/muur.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/ball.cpp$(ObjectSuffix) $(IntermediateDirectory)/circle.cpp$(ObjectSuffix) $(IntermediateDirectory)/drawable.cpp$(ObjectSuffix) $(IntermediateDirectory)/line.cpp$(ObjectSuffix) $(IntermediateDirectory)/muur.cpp$(ObjectSuffix) $(IntermediateDirectory)/rectangle.cpp$(ObjectSuffix) $(IntermediateDirectory)/vector.cpp$(ObjectSuffix) $(IntermediateDirectory)/window.cpp$(ObjectSuffix) 
 
 
 
@@ -133,6 +133,14 @@ $(IntermediateDirectory)/line.cpp$(DependSuffix): line.cpp
 $(IntermediateDirectory)/line.cpp$(PreprocessSuffix): line.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/line.cpp$(PreprocessSuffix) "line.cpp"
 
+$(IntermediateDirectory)/muur.cpp$(ObjectSuffix): muur.cpp $(IntermediateDirectory)/muur.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/luuks/OneDrive/Documenten/HBO-ICT_jaar_1/C++/TCTI-V1OOPC-15-BASE/17-10-huiswerk-opdracht/muur.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/muur.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/muur.cpp$(DependSuffix): muur.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/muur.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/muur.cpp$(DependSuffix) -MM "muur.cpp"
+
+$(IntermediateDirectory)/muur.cpp$(PreprocessSuffix): muur.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/muur.cpp$(PreprocessSuffix) "muur.cpp"
+
 $(IntermediateDirectory)/rectangle.cpp$(ObjectSuffix): rectangle.cpp $(IntermediateDirectory)/rectangle.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/luuks/OneDrive/Documenten/HBO-ICT_jaar_1/C++/TCTI-V1OOPC-15-BASE/17-10-huiswerk-opdracht/rectangle.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/rectangle.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/rectangle.cpp$(DependSuffix): rectangle.cpp
@@ -156,14 +164,6 @@ $(IntermediateDirectory)/window.cpp$(DependSuffix): window.cpp
 
 $(IntermediateDirectory)/window.cpp$(PreprocessSuffix): window.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/window.cpp$(PreprocessSuffix) "window.cpp"
-
-$(IntermediateDirectory)/muur.cpp$(ObjectSuffix): muur.cpp $(IntermediateDirectory)/muur.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/luuks/OneDrive/Documenten/HBO-ICT_jaar_1/C++/TCTI-V1OOPC-15-BASE/17-10-huiswerk-opdracht/muur.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/muur.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/muur.cpp$(DependSuffix): muur.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/muur.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/muur.cpp$(DependSuffix) -MM "muur.cpp"
-
-$(IntermediateDirectory)/muur.cpp$(PreprocessSuffix): muur.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/muur.cpp$(PreprocessSuffix) "muur.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

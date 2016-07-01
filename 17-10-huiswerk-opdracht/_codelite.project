@@ -29,14 +29,14 @@
     <File Name="drawable.hpp"/>
     <File Name="line.cpp"/>
     <File Name="line.hpp"/>
+    <File Name="muur.cpp"/>
+    <File Name="muur.hpp"/>
     <File Name="rectangle.cpp"/>
     <File Name="rectangle.hpp"/>
     <File Name="vector.cpp"/>
     <File Name="vector.hpp"/>
     <File Name="window.cpp"/>
     <File Name="window.hpp"/>
-    <File Name="muur.hpp"/>
-    <File Name="muur.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
