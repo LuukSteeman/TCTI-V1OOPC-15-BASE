@@ -1,39 +1,40 @@
 #include "sam.h"
+#include "hwlib.hpp"
 
 int main( void ){
    // kill the watchdog
    WDT->WDT_MR = WDT_MR_WDDIS;
    
    // make the GPIO pins an output
-   PIOB->PIO_OER = 0x01 << 25;
-   PIOC->PIO_OER = 0x01 << 28;
-   PIOC->PIO_OER = 0x01 << 25;
-   PIOC->PIO_OER = 0x01 << 24;
+   auto led0 = hwlib::target::pin_out( hwlib::target::pins::d7 );
+   auto led1 = hwlib::target::pin_out( hwlib::target::pins::d6 );
+   auto led2 = hwlib::target::pin_out( hwlib::target::pins::d5 );
+   auto led3 = hwlib::target::pin_out( hwlib::target::pins::d4 );
 
 	for (;;) {
 		
-		//Turn B25 and C28 on
-		PIOB->PIO_SODR = 0x01 << 25;
-		PIOC->PIO_SODR = 0x01 << 28;
+		
+		led0.set(1);
+		led1.set(1);
 		for (volatile int i = 0; i < 100'000; i++){}
 		
 		//Turn B25 off and C25 on
-		PIOB->PIO_CODR = 0x01 << 25;
-		PIOC->PIO_SODR = 0x01 << 25;
+		led0.set(0);
+		led2.set(1);
 		for (volatile int i = 0; i < 100'000; i++){}
 		
 		//TURN C28 off and C24 on
-		PIOC->PIO_CODR = 0x01 << 28;
-		PIOC->PIO_SODR = 0x01 << 24;
+		led1.set(0);
+		led3.set(1);
 		for (volatile int i = 0; i < 100'000; i++){}
 		
 		//REVERSE ORDER
-		PIOC->PIO_CODR = 0x01 << 24;
-		PIOC->PIO_SODR = 0x01 << 28;
+		led1.set(1);
+		led3.set(0);
 		for (volatile int i = 0; i < 100'000; i++){}
 		
-		PIOC->PIO_CODR = 0x01 << 25;
-		PIOB->PIO_SODR = 0x01 << 25;
+		led0.set(1);
+		led2.set(0);
 		for (volatile int i = 0; i < 100'000; i++){}
 	}
 }

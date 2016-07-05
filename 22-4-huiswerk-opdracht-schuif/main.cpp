@@ -24,108 +24,110 @@ int main( void ){
    PMC->PMC_PCER0 = (0x3F << 11);
    
    // make the GPIO pins an output
-   PIOB->PIO_OER = 0x01 << 25;
-   PIOC->PIO_OER = 0x01 << 28;
-   PIOC->PIO_OER = 0x01 << 25;
-   PIOC->PIO_OER = 0x01 << 24;
+   auto led0 = hwlib::target::pin_out( hwlib::target::pins::d7 );
+   auto led1 = hwlib::target::pin_out( hwlib::target::pins::d6 );
+   auto led2 = hwlib::target::pin_out( hwlib::target::pins::d5 );
+   auto led3 = hwlib::target::pin_out( hwlib::target::pins::d4 );
+   auto button1 = hwlib::target::pin_in( hwlib::target::pins::d9);
+   auto button2 = hwlib::target::pin_in( hwlib::target::pins::d10);
 
 	for (;;) {
-		if (( PIOC->PIO_PDSR & (0x01 << 21)) == 0 && counter < 8)
+		if ( (button1.get() == 1) && (counter < 8))
 		{
 			counter++;
 			for (volatile int i = 0; i < 100'000; i++){}
 		}
-		else if (( PIOD->PIO_PDSR & (0x01 << 7)) == 0 && counter > 0)
+		else if ( (button2.get() == 1) && (counter > 0))
 		{
 			counter--;
 			for (volatile int i = 0; i < 100'000; i++){}
 		}
 		switch(counter) {
 			case 0:
-			PIOB->PIO_CODR = 0x01 << 25;
-			PIOC->PIO_CODR = 0x01 << 28;
-			PIOC->PIO_CODR = 0x01 << 25;
-			PIOC->PIO_CODR = 0x01 << 24;
+			led0.set(0);
+			led1.set(0);
+			led2.set(0);
+			led3.set(0);
 			hc595.p0.set(0);
 			hc595.p1.set(0);
 			hc595.p2.set(0);
 			hc595.p3.set(0);
 			break;
 			case 1:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_CODR = 0x01 << 28;
-			PIOC->PIO_CODR = 0x01 << 25;
-			PIOC->PIO_CODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(0);
+			led2.set(0);
+			led3.set(0);
 			hc595.p0.set(0);
 			hc595.p1.set(0);
 			hc595.p2.set(0);
 			hc595.p3.set(0);
 			break;
 			case 2:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 28;
-			PIOC->PIO_CODR = 0x01 << 25;
-			PIOC->PIO_CODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(1);
+			led2.set(0);
+			led3.set(0);
 			hc595.p0.set(0);
 			hc595.p1.set(0);
 			hc595.p2.set(0);
 			hc595.p3.set(0);
 			break;
 			case 3:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 28;
-			PIOC->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_CODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(1);
+			led2.set(1);
+			led3.set(0);
 			hc595.p0.set(0);
 			hc595.p1.set(0);
 			hc595.p2.set(0);
 			hc595.p3.set(0);
 			break;
 			case 4:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 28;
-			PIOC->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(1);
+			led2.set(1);
+			led3.set(1);
 			hc595.p0.set(0);
 			hc595.p1.set(0);
 			hc595.p2.set(0);
 			hc595.p3.set(0);
 			break;
 			case 5:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 28;
-			PIOC->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(1);
+			led2.set(1);
+			led3.set(1);
 			hc595.p0.set(1);
 			hc595.p1.set(0);
 			hc595.p2.set(0);
 			hc595.p3.set(0);
 			break;
 			case 6:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 28;
-			PIOC->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(1);
+			led2.set(1);
+			led3.set(1);
 			hc595.p0.set(1);
 			hc595.p1.set(1);
 			hc595.p2.set(0);
 			hc595.p3.set(0);
 			break;
 			case 7:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 28;
-			PIOC->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(1);
+			led2.set(1);
+			led3.set(1);
 			hc595.p0.set(1);
 			hc595.p1.set(1);
 			hc595.p2.set(1);
 			hc595.p3.set(0);
 			break;
 			case 8:
-			PIOB->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 28;
-			PIOC->PIO_SODR = 0x01 << 25;
-			PIOC->PIO_SODR = 0x01 << 24;
+			led0.set(1);
+			led1.set(1);
+			led2.set(1);
+			led3.set(1);
 			hc595.p0.set(1);
 			hc595.p1.set(1);
 			hc595.p2.set(1);
