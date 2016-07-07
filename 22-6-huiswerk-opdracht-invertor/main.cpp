@@ -2,10 +2,10 @@
 #include "hwlib.hpp"
 
 class pin_out_all : public hwlib::pin_out {
-public:
+protected:
    hwlib::pin_out * list[ 4 ];     
    
-
+public:
 
    pin_out_all( 
       hwlib::pin_out & p0, 
@@ -33,7 +33,7 @@ public:
   {}
     
    void set( bool v ) override{
-      for( auto p  : lijst ){
+      for( auto p : list ){
           p->set( !v );
       }
    }
