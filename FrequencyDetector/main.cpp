@@ -1,3 +1,9 @@
+
+//          Copyright Luuk Steeman 2004 - 2006.
+// Distributed under the Boost Software License, Version 1.0.
+//    (See accompanying file LICENSE_1_0.txt or copy at
+//          http://www.boost.org/LICENSE_1_0.txt)
+
 #include "sam.h"
 #include "hwlib.hpp"
 #include "signal_pin.hpp"
@@ -48,7 +54,7 @@ int main( void ){
 	<< "\n";
 	
 	if (sig.find_intensity() > 1600) {
-		PIOC->PIO_RSODR = 0x01 << 21;
+		PIOC->PIO_SODR = 0x01 << 21;
 	}
 	
 	else if (sig.find_intensity() > 800) {

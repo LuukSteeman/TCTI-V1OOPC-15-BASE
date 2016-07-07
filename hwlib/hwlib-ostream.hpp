@@ -16,7 +16,7 @@
 
 namespace hwlib {
 
-   /// end-of-linbe constant
+   /// end-of-line constant
    constexpr char endl = '\n';
    
    /// 0-character constant
@@ -617,6 +617,8 @@ namespace hwlib {
    /// This function implements a bit-banged output-only UART 
    /// using the BMPTK_BAUDRATE.
    void HWLIB_WEAK uart_putc_bit_banged_pin( char c, pin_out & pin ){
+   
+   #ifdef BMPTK_TARGET
       const auto bit_cel = ( ( 1000L * 1000L ) / BMPTK_BAUDRATE );
    
       pin.set( 1 );
@@ -636,6 +638,9 @@ namespace hwlib {
       // 2 stop bits
       pin.set( 1 );
       wait_us( 2 * bit_cel );
+   #else
+   #endif   
+   
    }      
    
    /// console character output function

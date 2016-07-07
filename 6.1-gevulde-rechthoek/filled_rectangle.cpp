@@ -18,4 +18,3 @@ void filled_rectangle::print(){
 	   }
    }
 }
-
