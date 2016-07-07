@@ -6,12 +6,12 @@
 
 int main(){
    window w( vector( 128, 64 ), 2 );
-   muur top( w, vector(   0,  0 ), vector( 127,  4 ), vector(-1,1) );
-   muur right( w, vector( 123,  0 ), vector( 127, 63 ), vector(1,-1) );
-   muur bottom( w, vector(   0, 59 ), vector( 127, 63 ), vector(-1,1) );
-   muur left( w, vector(   0,  0 ), vector(   4, 63 ), vector(1,-1)  );
+   muur top( w, vector(   0,  0 ), vector( 127,  4 ), vector(1,-1) );
+   muur right( w, vector( 123,  0 ), vector( 127, 63 ), vector(-1,1) );
+   muur bottom( w, vector(   0, 59 ), vector( 127, 63 ), vector(1,-1) );
+   muur left( w, vector(   0,  0 ), vector(   4, 63 ), vector(-1,1)  );
    ball b( w, vector( 50, 20 ), 9, vector( 5, 2 ) );
-   victim v(w, vector(110,50), vector(127,63));
+   victim v(w, vector(70,30), vector(80,40));
    
    drawable * objects[] = { &b, &top, &left, &right, &bottom, &v};
 

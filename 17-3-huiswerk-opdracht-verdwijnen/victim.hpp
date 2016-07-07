@@ -7,10 +7,12 @@
 
 class victim : public rectangle {
 	
+	vector & start;
+	vector & end
 public:
-	vector start_help;
 	victim (window & w, const vector & start, const vector & end);
 	void interact(drawable& other) override;
+	void update() override;
 	
 };
 

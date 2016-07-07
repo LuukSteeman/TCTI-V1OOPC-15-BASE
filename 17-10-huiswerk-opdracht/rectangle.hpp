@@ -11,14 +11,18 @@
 
 class rectangle : public drawable {
 protected:
+	vector start;
    vector end;
    line left;
    line right;
    line top;
    line bottom;
+   window & win;
+   
 public:
    rectangle( window & w, const vector & start, const vector & end );   
    void draw() override;
+   void fill();
 };
 
 

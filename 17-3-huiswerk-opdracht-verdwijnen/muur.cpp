@@ -1,40 +1,41 @@
 #include "muur.hpp"
 #include <iostream>
 
+muur::muur( window & w, const vector & start, const vector & end, const vector & bounce, bool filled, int update_interval ):
+	rectangle( w, start, end),
+	filled (filled),
+	update_interval(update_interval),
+	update_count( 0 )
+{
+	this->bounce = bounce;
+}
+
 void muur::update(){
-   if (filled == 1)
-	{
-		filled = 0;
-	}
-	else 
-	{
-		filled = 1;
+	update_count++;
+	if (update_count == update_interval){
+	   if (filled == 1)
+		{
+			filled = 0;
+			update_count = 0;
+		}
+		else 
+		{
+			filled = 1;
+			update_count = 0;
+		}
 	}
 }
 
-muur::muur( window & w, const vector & start, const vector & end, const vector & bounce, bool filled, int update_interval, int update_count ):
-	rectangle( w, start, end),
-	start_help(start),
-	filled (filled),
-	update_interval(update_interval),
-	update_count(update_count),
-	bounce(bounce)
-{}
-
 void muur::draw(){
-	if ( (update_count % 2) == 0)
+	if (filled == 1)
 	{
-		for (int i = start_help.x; i < end.x; i++)
-		{
-			for (int j = start_help.y; j < end.y; j++) 
-			{
-				w.draw( vector(i, j));
-			}
-		}
-	update();
-	update_count++;
+		fill();
 	}
-	else {
-		draw();
+	else 
+	{
+		left.draw();
+		right.draw();
+		top.draw();
+		bottom.draw();
 	}
 }
