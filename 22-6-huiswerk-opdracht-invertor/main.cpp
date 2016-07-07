@@ -25,15 +25,15 @@ public:
 
 class pin_out_invert: public pin_out_all {
 private:
-    pin_out_all & listt;
+    pin_out_all & lijst;
 public:
-  pin_out_invert(pin_out_all & listt):
-        pin_out_all(listt),
-        listt(listt)
+  pin_out_invert(pin_out_all & lijst):
+        pin_out_all(lijst),
+        lijst(lijst)
   {}
     
    void set( bool v ) override{
-      for( auto p  : list ){
+      for( auto p  : lijst ){
           p->set( !v );
       }
    }
